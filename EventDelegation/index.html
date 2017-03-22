@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Delegation</title>
+</head>
+<body>
+	<ul id="list">
+		<li class="list-item">a</li>
+		<li class="list-item">b</li>
+		<li class="list-item">c</li>
+		<li class="list-item">d</li>
+	</ul>
+</body>
+<script>
+	document.getElementById("list").addEventListener("click", function(e) {
+		if(e.target && e.target.nodeName == "LI") {
+		// List item found!  Output the ID!
+			console.log("List item ", e.target.innerHTML, " was clicked!");
+		}
+	})
+
+</script>
+</html>

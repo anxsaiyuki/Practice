@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype</title>
+</head>
+<body>
+
+</body>
+<script>
+	//======
+	var Animal = function(name, type) {
+		var a = {};
+		a.type = type || "Unknown";
+		a.name = name || "Unknown"; 
+		this.getName = function() {
+			return a.name;
+		}
+
+		this.getType = function() {
+			return a.type;
+		}
+		//this.type = "Unknown"; 
+		return this;
+	}
+
+	// Animal.prototype.getName = function() {
+	// 	return this.name;
+	// }
+
+	// Animal.prototype.getType = function() {
+	// 	return this.type;
+	// }
+
+	var Dog = function(name) {
+		var d = Animal.call(this, name, "dog");
+
+		d.changeName = function(newName) {
+			d.name = newName;
+		}
+		return d;
+	}
+
+	// Dog.prototype = Object.create(Animal.prototype);
+
+	// Dog.prototype.changeName = function(newName) {
+	// 	this.name = newName;
+	// }
+
+	var d = new Dog("Cyril");
+
+	var a = new Animal("sss", "shit");
+
+	console.log(a.getName());
+
+	console.log(d);
+
+	console.log(d.getType());
+
+	d.changeName("Andrew");
+
+	console.log(d.getName());	
+
+
+
+	var a = function(aa) {
+		return new Promise(function(resolve, reject) {
+			if () {
+				resolve(bb)
+			} else {
+				reject()
+			}
+		})
+	}
+
+	var b = function(bb) {
+		return new Promise(function(resolve, reject) {
+			if () {
+				resolve()
+			} else {
+				reject()
+			}
+		})
+	}
+
+	a("test")
+	  .then(function(result) {
+	  	return b(result);
+	  })	
+	  .then(c)
+	  .catch(function() {
+
+	  })
+
+</script>
+</html>
